@@ -85,6 +85,7 @@ Route::get('/admin/dashboard', function () {
     ]);
 })->name('admin.dashboard');
 
+<<<<<<< HEAD
 Route::get('/admin/products', function () {
     if (!session('admin_logged_in')) {
         return redirect()->route('admin.login');
@@ -138,6 +139,8 @@ Route::get('/admin/contacts', function () {
     return view('admin.contacts.index', compact('contacts'));
 })->name('admin.contacts.index');
 
+=======
+>>>>>>> e448ae559fcabf58ac1decb1137d7f4c90e449a8
 Route::post('/contact-store', [ContactController::class, 'store'])->name('contact.store');
 Route::post('/admin/products', [\App\Http\Controllers\Admin\ProductController::class, 'store'])->name('admin.product.store');
 Route::put('/admin/products/{id}', [\App\Http\Controllers\Admin\ProductEditController::class, 'update'])->name('admin.product.update');

@@ -31,7 +31,17 @@
                     @foreach($galleries as $gallery)
                         <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                             <div class="bg-light p-4 rounded text-center h-100">
+<<<<<<< HEAD
                                 <img src="{{ asset('storage/' . $gallery->image_path) }}" alt="{{ $gallery->title }}" class="img-fluid rounded mb-3" style="max-height: 250px; object-fit: cover; width: 100%;">
+=======
+                                @if(filter_var($gallery->image_path, FILTER_VALIDATE_URL))
+                                    <img src="{{ $gallery->image_path }}" alt="{{ $gallery->title }}" class="img-fluid rounded mb-3" style="max-height: 250px; object-fit: cover; width: 100%;">
+                                @else
+                                    <div class="bg-primary text-white p-5 mb-3 rounded">
+                                        <i class="fas fa-image fa-4x"></i>
+                                    </div>
+                                @endif
+>>>>>>> e448ae559fcabf58ac1decb1137d7f4c90e449a8
                                 <h4 class="mb-2">{{ $gallery->title }}</h4>
                                 <span class="badge bg-success">{{ $gallery->category }}</span>
                                 <p class="text-muted mt-3 small">{{ $gallery->created_at->format('d M Y') }}</p>

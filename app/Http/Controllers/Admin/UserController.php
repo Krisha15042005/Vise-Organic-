@@ -21,6 +21,10 @@ class UserController extends Controller
 
         User::create($validated);
 
+<<<<<<< HEAD
         return redirect()->route('admin.dashboard')->with('success', 'User created successfully');
+=======
+        return back()->with('success', 'User created successfully');
+>>>>>>> e448ae559fcabf58ac1decb1137d7f4c90e449a8
     }
 }
